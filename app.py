@@ -28,9 +28,9 @@ def index():
         # TODO: Add the user's entry into the database
         name = request.form.get("name")
         day = request.form.get("day")
-        month = request.form.get("year")
+        month = request.form.get("month")
 
-        db.execute("INSERT INTO birthdays (name,day,month) VALUES(?,?,?)", name, day, month)
+        db.execute("INSERT INTO birthdays (name,month,day) VALUES(?,?,?)", name, month, day)
 
         return redirect("/")
 
